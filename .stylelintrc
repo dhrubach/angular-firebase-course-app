@@ -1,0 +1,8 @@
+{
+	extends: "stylelint-config-standard",
+	rules: {
+		"declaration-no-important": true,
+		"declaration-empty-line-before": null,
+		"indentation": "tab"
+	}
+}
