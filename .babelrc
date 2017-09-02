@@ -1,0 +1,22 @@
+{
+	"presets": [
+		[
+			"env",
+			{
+				"loose": true,
+				"modules": false
+			}
+		],
+		"angular2"
+	],
+	"plugins": [
+		[ "transform-runtime" ]
+	],
+	"env": {
+		"test": {
+			"plugins": [
+				"transform-es2015-modules-commonjs"
+			]
+		}
+	}
+}
