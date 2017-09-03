@@ -154,7 +154,6 @@ const plugins = [
 		tether: 'tether',
 		Tether: 'tether',
 		'window.Tether': 'tether',
-		Chartist: 'chartist',
 	}),
 	new ForkTSCheckerPlugin({
 		tslint: false,
