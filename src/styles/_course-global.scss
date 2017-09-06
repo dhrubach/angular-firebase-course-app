@@ -1,0 +1,22 @@
+@import './course-variables';
+
+html {
+	font-family: $font-stack;
+}
+
+body {
+	font-size: $font-size-default;
+
+	padding-bottom: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $font-stack;
+	font-weight: 300;
+	line-height: 1.5em;
+}
