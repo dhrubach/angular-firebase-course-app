@@ -1,0 +1,19 @@
+#course-list {
+	.mat-card {
+		padding: 0;
+	}
+
+	.mat-card-title {
+		margin-bottom: 0;
+	}
+
+	.mat-list {
+		position: relative;
+
+		height: 100%;
+	}
+
+	.mat-list-item-content {
+		height: 70px;
+	}
+}

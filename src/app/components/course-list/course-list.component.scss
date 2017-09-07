@@ -1,0 +1,38 @@
+@import '../../../styles/course-variables';
+
+.course-list-item-container {
+	width: 350px;
+	height: 400px;
+	margin: $default-margin-width;
+
+	border-radius: 3px;
+}
+
+.course-list-item {
+	position: relative;
+
+	box-sizing: border-box;
+	height: 100%;
+
+	&__header {
+		font-weight: 600;
+
+		box-sizing: inherit;
+		height: 70px;
+		padding: 20px;
+
+		text-align: center;
+
+		background: #eef2f9;
+	}
+}
+
+.course-list-item__content {
+	height: calc(100% - 102px);
+
+	&-course-item {
+		padding-top: 5px;
+
+		border-bottom: 1px solid #eef2f9;
+	}
+}

@@ -1,0 +1,26 @@
+@import '../../../styles/course-variables';
+
+.course-item-container {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	display: flex;
+	align-items: center;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+
+	box-sizing: border-box;
+}
+
+.course-item__icon-container {
+	width: 30px;
+	height: 30px;
+	padding: 5px 10px 5px 20px;
+}
+
+.course-item__text-content {
+	padding: 10px;
+}
