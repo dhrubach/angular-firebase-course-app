@@ -1,1 +1,18 @@
 @import '../../styles/course-variables';
+
+.home-container {
+	height: $default-container-height;
+}
+
+.course-list-container {
+	position: relative;
+
+	display: flex;
+	align-content: flex-start;
+	flex-flow: row wrap;
+	justify-content: space-between;
+
+	width: $course-list-min-width;
+	height: 100%;
+	margin: $default-margin-width;
+}
