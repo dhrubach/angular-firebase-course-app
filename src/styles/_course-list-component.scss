@@ -1,3 +1,5 @@
+@import './course-mixins';
+
 #course-list {
 	.mat-card {
 		padding: 0;
@@ -14,6 +16,15 @@
 	}
 
 	.mat-list-item-content {
-		height: 70px;
+		height: $course-list-item-height;
+
+		&:hover {
+			transform: scale(1.05);
+
+			border-radius: $default-border-radius;
+			background-color: $primary-background-color;
+
+			@include box-shadow();
+		}
 	}
 }

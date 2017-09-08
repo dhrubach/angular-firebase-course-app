@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 
 interface ICourseItem {
-	iconUrl: string;
 	lessons?: number;
 	name: string;
 }

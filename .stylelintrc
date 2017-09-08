@@ -3,6 +3,9 @@
 	rules: {
 		"declaration-no-important": true,
 		"declaration-empty-line-before": null,
-		"indentation": "tab"
+		"indentation": "tab",
+		"at-rule-no-unknown": [true, {
+			"ignoreAtRules": ["include", "mixin"]
+		}]
 	}
 }

@@ -1,8 +1,7 @@
 <div class="home-container">
 	<div class="course-list-container">
-		<course-list></course-list>
-		<course-list></course-list>
-		<course-list></course-list>
-		<course-list></course-list>
+		<div *ngFor="let topic of topics">
+			<course-list [topic]="topic"></course-list>
+		</div>
 	</div>
 </div>
