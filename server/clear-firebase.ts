@@ -1,22 +1,25 @@
 import { database, initializeApp } from 'firebase';
 
+import * as chalk from 'chalk';
+import * as moment from 'moment';
+
 import { firebaseConfig } from './firebase.config'
 
-const databaseLocations = ['lessonsPerCourse', 'lessons', 'courses'];
+const databaseLocations = ['lessonsPerCourse', "coursesPerTopic", 'lessons', 'courses', "topics"];
+const log = console.log.bind(console);
 
 initializeApp(firebaseConfig);
 
 databaseLocations.forEach((location) => {
 	const ref = database().ref(location);
 
-	console.log('removing ${location}');
-	console.log(ref);
+	log(`[${chalk.red.bold(moment().format('LTS'))}] removing ${chalk.cyan(location)}`);
 
 	ref.remove()
 		.then(() => {
-			console.log(`data at '${location}' location removed.`);
+			log(`[${chalk.red.bold(moment().format('LTS'))}]  data at ${chalk.yellow.bold(location)} removed.`);
 		})
 		.catch(() => {
-			console.log('data deletion failed.');
+			log('data deletion failed.');
 		});
 });

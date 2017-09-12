@@ -5,6 +5,11 @@
 	"scripts": {
 		"rimraf": "./node_modules/.bin/rimraf",
 		"webpack": "./node_modules/.bin/webpack",
+		"ts-node": "./node_modules/.bin/ts-node",
+
+		"refresh-data": "npm run ts-node -- --project ./server/tsconfig.server.json ./server/populate-firebase.ts",
+		"clear-data": "npm run ts-node -- --project ./server/tsconfig.server.json ./server/clear-firebase.ts",
+
 		"build": "npm run build:dev",
 		"build:dev": "npm run rimraf -- dist && cross-env NODE_ENV=development npm run webpack -- --colors --progress --display-error-details --display-cached",
 		"build:prod": "npm run rimraf -- dist && cross-env NODE_ENV=production npm run webpack -- --colors",
@@ -12,6 +17,7 @@
 		"build:test": "npm run rimraf -- dist && cross-env NODE_ENV=test npm run webpack -- --colors",
 		"build:watch": "npm run build -- --watch",
 		"build:server": "./node_modules/.bin/webpack-dev-server --debug --colors --config ./webpack.config.js",
+
 		"serve": "./node_modules/.bin/http-server ./dist -p 8080 -d false -o",
 		"serve:prod": "./node_modules/.bin/http-server ./dist -p 8080 -d false -g -o"
 	},
@@ -59,6 +65,7 @@
 		"babel-plugin-transform-runtime": "^6.23.0",
 		"babel-preset-angular2": "0.0.2",
 		"babel-preset-env": "^1.6.0",
+		"chalk": "^2.1.0",
 		"compression-webpack-plugin": "^1.0.0",
 		"cross-env": "^5.0.5",
 		"css-loader": "^0.28.5",
