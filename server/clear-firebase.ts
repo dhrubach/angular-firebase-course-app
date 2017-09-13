@@ -3,7 +3,7 @@ import { database, initializeApp } from 'firebase';
 import * as chalk from 'chalk';
 import * as moment from 'moment';
 
-import { firebaseConfig } from './firebase.config'
+import { firebaseConfig } from '../config/firebase.config';
 
 const databaseLocations = ['lessonsPerCourse', "coursesPerTopic", 'lessons', 'courses', "topics"];
 const log = console.log.bind(console);

@@ -1,6 +1,10 @@
 import { ApplicationRef, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
+import { firebaseConfig } from '../config/firebase.config';
 
 import {
 	AppComponent,
@@ -20,6 +24,8 @@ import { AppRoutingModule } from './main-routing.module';
 	],
 	entryComponents: [AppComponent],
 	imports: [
+		AngularFireModule.initializeApp(firebaseConfig),
+		AngularFireDatabaseModule,
 		AppMaterialModule,
 		AppRoutingModule,
 		BrowserAnimationsModule,

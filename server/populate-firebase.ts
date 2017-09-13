@@ -4,7 +4,7 @@ import * as chalk from 'chalk';
 import * as moment from 'moment';
 
 import { dbData } from './db-data';
-import { firebaseConfig } from './firebase.config';
+import { firebaseConfig } from '../config/firebase.config';
 
 initializeApp(firebaseConfig);
 

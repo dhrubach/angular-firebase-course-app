@@ -53,6 +53,7 @@
 		"lodash-es": "^4.17.4",
 		"moment": "^2.18.1",
 		"normalize.css": "^7.0.0",
+		"promise-polyfill": "6.0.2",
 		"rxjs": "^5.4.3",
 		"zone.js": "^0.8.17"
 	},
