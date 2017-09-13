@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 
 interface ICourseItem {
-	lessons?: number;
-	name: string;
+	numberOfLessons?: number;
+	description: string;
 }
 
 @Component({

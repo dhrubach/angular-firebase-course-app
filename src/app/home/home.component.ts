@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { Observable } from 'rxjs/Observable';
+
+import 'rxjs/add/operator/map';
 
 import { ICourseTopic } from '../components';
 
@@ -9,28 +13,18 @@ import { ICourseTopic } from '../components';
 })
 export class HomeComponent implements OnInit {
 
-	private topics: ICourseTopic[];
+	private topics: Observable<ICourseTopic[]>;
 
-	constructor() { } /* tslint:disable-line */
+	constructor(private db: AngularFireDatabase) { } /* tslint:disable-line */
 
 	public ngOnInit(): void {
-		this.topics = [
-			{
-				iconUrl: require('../../assets/img/angular.svg'),
-				name: 'Angular',
-			},
-			{
-				iconUrl: require('../../assets/img/rxjs.svg'),
-				name: 'RxJs',
-			},
-			{
-				iconUrl: require('../../assets/img/node.svg'),
-				name: 'NodeJS',
-			},
-			{
-				iconUrl: require('../../assets/img/js.svg'),
-				name: 'JavaScript',
-			},
-		];
+		this.topics =
+			this.db.list('/topics')
+				.map((topics: ICourseTopic[]) => {
+					topics.forEach((topic: ICourseTopic) => {
+						topic['iconUrl'] = require(`../../assets/img/${topic.name.toLowerCase()}.svg`);
+					});
+					return topics;
+				});
 	}
 }
