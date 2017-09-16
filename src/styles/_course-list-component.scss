@@ -19,6 +19,7 @@
 		height: $course-list-item-height;
 
 		&:hover {
+			cursor: pointer;
 			transform: scale(1.05);
 
 			border-radius: $default-border-radius;
@@ -26,5 +27,10 @@
 
 			@include box-shadow();
 		}
+	}
+
+	.mat-card-footer {
+		margin: 0;
+		padding: 0 10px 10px;
 	}
 }

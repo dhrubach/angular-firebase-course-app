@@ -3,10 +3,7 @@
 
 .course-list-item-container {
 	width: 350px;
-	height: 400px;
 	margin: $default-margin-width;
-
-	border-radius: $default-border-radius;
 }
 
 .course-list-item {
@@ -36,6 +33,7 @@
 
 	&-text {
 		font-weight: 600;
+
 		padding: 10px;
 	}
 }
@@ -47,5 +45,18 @@
 		padding-top: 5px;
 
 		border-bottom: 1px solid $default-border-color;
+	}
+}
+
+.course-list-item__footer {
+	display: flex;
+	align-items: center;
+	flex-flow: row nowrap;
+	justify-content: flex-end;
+
+	&-timer {
+		padding-left: 10px;
+
+		color: #8d9aa8;
 	}
 }
