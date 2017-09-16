@@ -2,6 +2,7 @@ export const dbData = {
 	"topics": [
 		{
 			"name": "Angular",
+			"totalDuration": "02:25:21",
 			"courses": [
 				{
 					"url": "getting-started-with-angular2",
@@ -236,11 +237,77 @@ export const dbData = {
 							"url": "angular2-exercise-solution-learn-how-to-build-a-typeahead-that-cancels-obsolete-search-requests"
 						}
 					]
+				},
+				{
+					"url": "angular2-forms",
+					"description": "Angular Forms",
+					"longDescription": "Learn to basics of angular forms. Dive deep into building forms using either template or reactive approach",
+					"numberOfLessons": "8",
+					"totalDuration": "32:00",
+					"lessons": [
+						{
+							"description": "Template Driven Forms",
+							"duration": "4:59",
+							"longDescription": "",
+							"tags": "BEGINNER",
+							"url": "angular2-forms-template"
+						},
+						{
+							"description": "NgModel - Why would you want to turn off two-way data binding?",
+							"duration": "3:44",
+							"longDescription": "",
+							"tags": "BEGINNER",
+							"url": "angular2-forms-ngmodel"
+						},
+						{
+							"description": "Understanding Angular Form Exports",
+							"duration": "3:15",
+							"longDescription": "",
+							"tags": "BEGINNER",
+							"url": "angular2-forms-export"
+						},
+						{
+							"description": "Display Form Field Validation Error Messages",
+							"duration": "3:28",
+							"longDescription": "",
+							"tags": "BEGINNER",
+							"url": "angular2-forms-error-messages"
+						},
+						{
+							"description": "Angular Reactive or Model Driven Forms",
+							"duration": "2:29",
+							"longDescription": "",
+							"tags": "BEGINNER",
+							"url": "angular2-forms-reactive-forms"
+						},
+						{
+							"description": "Reactive Forms With RxJS",
+							"duration": "6:23",
+							"longDescription": "",
+							"tags": "INTERMEDIATE",
+							"url": "angular2-forms-reactive-forms-rxjs"
+						},
+						{
+							"description": "Model Driven Forms - formControl Directive",
+							"duration": "1:58",
+							"longDescription": "",
+							"tags": "BEGINNER",
+							"url": "angular2-forms-formcontrol"
+						},
+						{
+							"description": "Model Driven Forms - Custom Validator",
+							"duration": "5:44",
+							"longDescription": "",
+							"tags": "INTERMEDIATE",
+							"url": "angular2-forms-custom-validator"
+						}
+					]
 				}
 			]
 		},
 		{
 			"name": "RxJS",
+			"totalDuration": "01:13:37",
 			"courses": [
 				{
 					"url": "intro-reactive-programming",
@@ -413,6 +480,7 @@ export const dbData = {
 		},
 		{
 			"name": "NodeJS",
+			"totalDuration": "02:16:57",
 			"courses": [
 				{
 					"url": "introduction-node-fundamentals",
@@ -648,6 +716,7 @@ export const dbData = {
 		},
 		{
 			"name": "JavaScript",
+			"totalDuration": "02:29:15",
 			"courses": [
 				{
 					"url": "understand-javascript-arrays",

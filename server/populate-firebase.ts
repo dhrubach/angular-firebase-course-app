@@ -22,6 +22,7 @@ dbData.topics.forEach((topic) => {
 
 	const topicRef = topicsRef.push({
 		name: topic.name,
+		totalDuration: topic.totalDuration,
 	});
 
 	topic.courses.forEach((course) => {
