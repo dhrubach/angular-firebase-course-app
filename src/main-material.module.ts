@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import {
 	MdButtonModule,
 	MdCardModule,
+	MdIconModule,
 	MdListModule,
 	MdToolbarModule,
 } from '@angular/material';
@@ -10,6 +11,7 @@ import {
 	exports: [
 		MdButtonModule,
 		MdCardModule,
+		MdIconModule,
 		MdListModule,
 		MdToolbarModule,
 	],
