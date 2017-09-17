@@ -1,7 +1,9 @@
 import {
 	Component,
+	EventEmitter,
 	Input,
 	OnChanges,
+	Output,
 	SimpleChange,
 	SimpleChanges,
 } from '@angular/core';
@@ -14,6 +16,16 @@ interface ICourseTopic {
 	iconUrl: string;
 }
 
+interface ICourse {
+	description: string;
+	longDescription: string;
+	numberOfLessons: string;
+	topicId: string;
+	totalDuration: string;
+	url: string;
+	$key: string;
+}
+
 @Component({
 	selector: 'course-list',
 	styles: [require('./course-list.component.scss')],
@@ -22,9 +34,13 @@ interface ICourseTopic {
 class CourseListComponent implements OnChanges {
 
 	@Input() private topic: ICourseTopic;
+	@Output() private onSelect: EventEmitter<string>;
+
 	private courseList: FirebaseListObservable<any[]>;
 
-	constructor(private db: AngularFireDatabase) { } /* tslint:disable-line */
+	constructor(private db: AngularFireDatabase) {
+		this.onSelect = new EventEmitter<string>();
+	}
 
 	public ngOnChanges(changes: SimpleChanges): void {
 		if (changes) {
@@ -40,6 +56,10 @@ class CourseListComponent implements OnChanges {
 				orderByChild: 'topicId',
 			},
 		});
+	}
+
+	private onCourseSelect(course: ICourse) {
+		this.onSelect.emit(course.$key);
 	}
 }
 

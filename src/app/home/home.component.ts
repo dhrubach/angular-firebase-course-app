@@ -14,6 +14,7 @@ import { ICourseTopic } from '../components';
 export class HomeComponent implements OnInit {
 
 	private topics: Observable<ICourseTopic[]>;
+	private course: string;
 
 	constructor(private db: AngularFireDatabase) { } /* tslint:disable-line */
 
@@ -26,5 +27,9 @@ export class HomeComponent implements OnInit {
 					});
 					return topics;
 				});
+	}
+
+	private refreshLessonList($courseId: string) {
+		this.course = $courseId;
 	}
 }

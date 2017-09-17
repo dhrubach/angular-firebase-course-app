@@ -6,7 +6,8 @@
 		</md-card-title>
 		<md-card-content class="course-list-item__content">
 			<md-list>
-				<md-list-item *ngFor="let course of courseList | async" class="course-list-item__content-course-item">
+				<md-list-item *ngFor="let course of courseList | async" class="course-list-item__content-course-item"
+					(click)="onCourseSelect(course)">
 					<course-item [data]="course"></course-item>
 				</md-list-item>
 			</md-list>

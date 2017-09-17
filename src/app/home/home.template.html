@@ -1,10 +1,10 @@
 <div class="home-container">
 	<div class="course-list-container">
 		<div *ngFor="let topic of topics | async">
-			<course-list [topic]="topic"></course-list>
+			<course-list [topic]="topic" (onSelect)="refreshLessonList($event)"></course-list>
 		</div>
 	</div>
 	<div class="lesson-list-container">
-		<course-lesson-list [lessons]="lessons"></course-lesson-list>
+		<course-lesson-list [course]="course"></course-lesson-list>
 	</div>
 </div>

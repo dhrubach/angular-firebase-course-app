@@ -29,10 +29,13 @@
 	position: relative;
 
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	flex-flow: row nowrap;
-	justify-content: center;
+	justify-content: flex-start;
 
 	box-sizing: inherit;
-	height: calc(100% - 64px);
+	min-width: $lesson-list-min-width;
+	height: 100%;
+	margin: 0 $default-margin-width;
+	padding: $default-padding-width 0;
 }

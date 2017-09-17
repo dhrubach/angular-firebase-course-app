@@ -1,1 +1,58 @@
 @import '../../../styles/course-variables';
+
+.lesson-list-item__content-container {
+	position: relative;
+
+	display: flex;
+	align-items: flex-start;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+
+	width: 100%;
+	height: 100%;
+	margin-bottom: 10px;
+
+	border-bottom: 1px solid $default-border-color;
+}
+
+.lesson-item__content-title {
+	display: flex;
+	align-items: flex-start;
+	flex-flow: column wrap;
+	justify-content: center;
+
+	box-sizing: border-box;
+	width: 75%;
+	min-width: 540px;
+	height: 80%;
+	padding: 10px;
+
+	border-right: 1px solid $default-border-color;
+
+	&-text {
+		font-size: 15px;
+		line-height: 20px;
+
+		letter-spacing: 0.37px;
+
+		color: #393f47;
+	}
+}
+
+.lesson-item__content-duration {
+	font-size: 11px;
+
+	display: flex;
+	align-items: flex-start;
+	flex-flow: row nowrap;
+	justify-content: flex-end;
+
+	box-sizing: border-box;
+	width: 25%;
+	height: 80%;
+	padding: 20px;
+
+	letter-spacing: 1.25px;
+
+	color: #8d9aa8;
+}

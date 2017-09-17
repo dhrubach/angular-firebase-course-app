@@ -1,0 +1,7 @@
+@import './course-mixins';
+
+#lesson-list {
+	.mat-list-item-content {
+		height: $lesson-list-item-height;
+	}
+}
