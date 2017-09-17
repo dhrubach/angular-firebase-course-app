@@ -11,6 +11,7 @@ import {
 	CourseItemComponent,
 	CourseListComponent,
 	HomeComponent,
+	LessonListComponent,
 } from './app';
 import { AppMaterialModule } from './main-material.module';
 import { AppRoutingModule } from './main-routing.module';
@@ -21,6 +22,7 @@ import { AppRoutingModule } from './main-routing.module';
 		CourseItemComponent,
 		CourseListComponent,
 		HomeComponent,
+		LessonListComponent,
 	],
 	entryComponents: [AppComponent],
 	imports: [
