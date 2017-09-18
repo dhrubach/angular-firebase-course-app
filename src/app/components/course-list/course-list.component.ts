@@ -7,38 +7,26 @@ import {
 	SimpleChange,
 	SimpleChanges,
 } from '@angular/core';
-import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import {Observable} from 'rxjs/Observable';
 
+import { ICourse, ITopic } from '../../models';
 import { ICourseItem } from '../course-item/course-item.component';
-
-interface ICourseTopic {
-	name: string;
-	iconUrl: string;
-}
-
-interface ICourse {
-	description: string;
-	longDescription: string;
-	numberOfLessons: string;
-	topicId: string;
-	totalDuration: string;
-	url: string;
-	$key: string;
-}
+import { CourseListService } from './course-list.service';
 
 @Component({
+	providers: [CourseListService],
 	selector: 'course-list',
 	styles: [require('./course-list.component.scss')],
 	template: require('./course-list.template.html'),
 })
 class CourseListComponent implements OnChanges {
 
-	@Input() private topic: ICourseTopic;
+	@Input() private topic: ITopic;
 	@Output() private onSelect: EventEmitter<string>;
 
-	private courseList: FirebaseListObservable<any[]>;
+	private courseList: Observable<ICourse[]>;
 
-	constructor(private db: AngularFireDatabase) {
+	constructor(private courseListService: CourseListService) {
 		this.onSelect = new EventEmitter<string>();
 	}
 
@@ -50,12 +38,7 @@ class CourseListComponent implements OnChanges {
 	}
 
 	private fetchCourseList(topicId: string): void {
-		this.courseList = this.db.list('/courses', {
-			query: {
-				equalTo: topicId,
-				orderByChild: 'topicId',
-			},
-		});
+		this.courseList = this.courseListService.fetchListOfCourses(topicId);
 	}
 
 	private onCourseSelect(course: ICourse) {
@@ -63,4 +46,4 @@ class CourseListComponent implements OnChanges {
 	}
 }
 
-export { CourseListComponent, ICourseTopic };
+export { CourseListComponent };

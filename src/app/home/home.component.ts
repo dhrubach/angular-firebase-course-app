@@ -1,32 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 
-import 'rxjs/add/operator/map';
-
-import { ICourseTopic } from '../components';
+import { ITopic } from '../models';
+import { HomeService } from './home.service';
 
 @Component({
+	providers: [HomeService],
 	selector: 'course-home',
 	styles: [require('./home.component.scss')],
 	template: require('./home.template.html'),
 })
 export class HomeComponent implements OnInit {
 
-	private topics: Observable<ICourseTopic[]>;
+	private topics: Observable<ITopic[]>;
 	private course: string;
 
-	constructor(private db: AngularFireDatabase) { } /* tslint:disable-line */
+	constructor(private homeService: HomeService) { } /* tslint:disable-line */
 
 	public ngOnInit(): void {
-		this.topics =
-			this.db.list('/topics')
-				.map((topics: ICourseTopic[]) => {
-					topics.forEach((topic: ICourseTopic) => {
-						topic['iconUrl'] = require(`../../assets/img/${topic.name.toLowerCase()}.svg`);
-					});
-					return topics;
-				});
+		this.topics = this.homeService.fetchListOfTopics();
 	}
 
 	private refreshLessonList($courseId: string) {
