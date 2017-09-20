@@ -1,4 +1,11 @@
 @import '../../../styles/course-variables';
+@import '../../../styles/course-mixins';
+
+.lesson-list-item-container {
+	position: relative;
+
+	border: 1px solid $default-border-color;
+}
 
 .lesson-list-item__content-container {
 	position: relative;
@@ -10,12 +17,22 @@
 
 	width: 100%;
 	height: 100%;
-	margin-bottom: 10px;
+	padding-bottom: 10px;
 
 	border-bottom: 1px solid $default-border-color;
+
+	&:hover {
+		cursor: pointer;
+		transform: scale(1.05);
+
+		border-radius: $default-border-radius;
+		background-color: $primary-background-color;
+
+		@include box-shadow();
+	}
 }
 
-.lesson-item__content-title {
+.lesson-list-item__content-title {
 	display: flex;
 	align-items: flex-start;
 	flex-flow: column wrap;
@@ -39,7 +56,7 @@
 	}
 }
 
-.lesson-item__content-duration {
+.lesson-list-item__content-duration {
 	font-size: 12px;
 	line-height: 12px;
 
