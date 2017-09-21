@@ -1,6 +1,6 @@
 <div class="lesson-list-container" id="lesson-list">
 	<md-list>
-		<md-list-item *ngFor="let lesson of lessons | async" class="lesson-list-item__content-container">
+		<md-list-item *ngFor="let lesson of lessons" class="lesson-list-item__content-container">
 			<div class="lesson-item__content-title">
 				<span class="lesson-item__content-title-text">{{lesson.description}}</span>
 			</div>

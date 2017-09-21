@@ -3,11 +3,15 @@ import {
 	EventEmitter,
 	Input,
 	OnChanges,
+	OnDestroy,
 	Output,
 	SimpleChange,
 	SimpleChanges,
 } from '@angular/core';
-import {Observable} from 'rxjs/Observable';
+import { Observable } from 'rxjs/Observable';
+import { Subscription } from 'rxjs/Subscription';
+
+import { NgProgressService } from 'ngx-progressbar';
 
 import { ICourse, ITopic } from '../../models';
 import { ICourseItem } from '../course-item/course-item.component';
@@ -19,14 +23,16 @@ import { CourseListService } from './course-list.service';
 	styles: [require('./course-list.component.scss')],
 	template: require('./course-list.template.html'),
 })
-class CourseListComponent implements OnChanges {
+class CourseListComponent implements OnChanges, OnDestroy {
 
 	@Input() private topic: ITopic;
 	@Output() private onSelect: EventEmitter<string>;
 
-	private courseList: Observable<ICourse[]>;
+	private courseList$: Observable<ICourse[]>;
+	private courseListSubscription: Subscription;
+	private courseList: ICourse[];
 
-	constructor(private courseListService: CourseListService) {
+	constructor(private courseListService: CourseListService, private progressService: NgProgressService) {
 		this.onSelect = new EventEmitter<string>();
 	}
 
@@ -37,8 +43,19 @@ class CourseListComponent implements OnChanges {
 		}
 	}
 
+	public ngOnDestroy(): void {
+		if (this.courseListSubscription) {
+			this.courseListSubscription.unsubscribe();
+		}
+	}
+
 	private fetchCourseList(topicId: string): void {
-		this.courseList = this.courseListService.fetchListOfCourses(topicId);
+		this.courseList$ = this.courseListService.fetchListOfCourses(topicId);
+
+		this.courseListSubscription = this.courseList$.subscribe((courseList: ICourse[]) => {
+			this.courseList = courseList;
+			this.progressService.done();
+		});
 	}
 
 	private onCourseSelect(course: ICourse) {

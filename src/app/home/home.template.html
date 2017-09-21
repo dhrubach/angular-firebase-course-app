@@ -1,6 +1,6 @@
 <div class="home-container">
 	<div class="course-list-container">
-		<div *ngFor="let topic of topics | async">
+		<div *ngFor="let topic of topics">
 			<course-list [topic]="topic" (onSelect)="refreshLessonList($event)"></course-list>
 		</div>
 	</div>
@@ -8,3 +8,4 @@
 		<course-lesson-list [course]="course"></course-lesson-list>
 	</div>
 </div>
+<ng-progress [showSpinner]="false" [thick]="true"></ng-progress>

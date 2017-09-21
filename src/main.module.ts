@@ -4,6 +4,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 
+import { NgProgressModule, NgProgressService } from 'ngx-progressbar';
+
 import { firebaseConfig } from '../config/firebase.config';
 
 import {
@@ -32,7 +34,9 @@ import { AppRoutingModule } from './main-routing.module';
 		AppRoutingModule,
 		BrowserAnimationsModule,
 		BrowserModule,
+		NgProgressModule,
 	],
+	providers: [NgProgressService],
 })
 export class MainComponent {
 	constructor(private appRef: ApplicationRef) { }
