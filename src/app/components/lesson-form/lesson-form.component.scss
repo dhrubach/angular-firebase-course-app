@@ -1,0 +1,10 @@
+@import '../../../styles/course-variables';
+@import '../../../styles/course-mixins';
+
+.lesson-form {
+	width: 350px;
+}
+
+.field-error-message {
+	padding-right: 20px;
+}

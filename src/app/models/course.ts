@@ -1,4 +1,4 @@
-export interface ICourse {
+interface ICourse {
 	description: string;
 	longDescription: string;
 	numberOfLessons: string;
@@ -7,3 +7,10 @@ export interface ICourse {
 	url: string;
 	$key: string;
 }
+
+interface ICourseAssociation {
+	$key: string;
+	$value: boolean;
+}
+
+export { ICourse, ICourseAssociation };
