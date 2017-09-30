@@ -14,6 +14,7 @@ import {
 	CourseListComponent,
 	HomeComponent,
 	LessonDetailComponent,
+	LessonFormComponent,
 	LessonListComponent,
 	LessonListService,
 } from './app';
@@ -27,6 +28,7 @@ import { AppRoutingModule } from './main-routing.module';
 		CourseListComponent,
 		HomeComponent,
 		LessonDetailComponent,
+		LessonFormComponent,
 		LessonListComponent,
 	],
 	entryComponents: [AppComponent],

@@ -3,6 +3,7 @@ import {
 	MdButtonModule,
 	MdCardModule,
 	MdIconModule,
+	MdInputModule,
 	MdListModule,
 	MdToolbarModule,
 } from '@angular/material';
@@ -12,6 +13,7 @@ import {
 		MdButtonModule,
 		MdCardModule,
 		MdIconModule,
+		MdInputModule,
 		MdListModule,
 		MdToolbarModule,
 	],
