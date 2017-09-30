@@ -13,7 +13,9 @@ import {
 	CourseItemComponent,
 	CourseListComponent,
 	HomeComponent,
+	LessonDetailComponent,
 	LessonListComponent,
+	LessonListService,
 } from './app';
 import { AppMaterialModule } from './main-material.module';
 import { AppRoutingModule } from './main-routing.module';
@@ -24,6 +26,7 @@ import { AppRoutingModule } from './main-routing.module';
 		CourseItemComponent,
 		CourseListComponent,
 		HomeComponent,
+		LessonDetailComponent,
 		LessonListComponent,
 	],
 	entryComponents: [AppComponent],
@@ -36,7 +39,7 @@ import { AppRoutingModule } from './main-routing.module';
 		BrowserModule,
 		NgProgressModule,
 	],
-	providers: [NgProgressService],
+	providers: [LessonListService, NgProgressService],
 })
 export class MainComponent {
 	constructor(private appRef: ApplicationRef) { }

@@ -9,6 +9,8 @@ import 'rxjs/add/operator/concatMap';
 @Injectable()
 export class LessonListService {
 
+	public selectedLesson: ILesson;
+
 	constructor(private db: AngularFireDatabase) { } /* tslint:disable-line */
 
 	public fetchListOfLessonsPerCourse(courseId: string): Observable<ILesson[]> {

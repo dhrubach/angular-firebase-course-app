@@ -6,6 +6,7 @@ import {
 	SimpleChange,
 	SimpleChanges,
 } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 
@@ -15,7 +16,6 @@ import { ILesson } from '../../models';
 import { LessonListService } from './lesson-list.service';
 
 @Component({
-	providers: [LessonListService],
 	selector: 'course-lesson-list',
 	styles: [require('./lesson-list.component.scss')],
 	template: require('./lesson-list.template.html'),
@@ -30,7 +30,8 @@ class LessonListComponent implements OnChanges, OnDestroy {
 
 	constructor(
 		private lessonListService: LessonListService,
-		private progressService: NgProgressService) { } /* tslint:disable-line */
+		private progressService: NgProgressService,
+		private router: Router) { } /* tslint:disable-line */
 
 	public ngOnChanges(changes: SimpleChanges): void {
 		if (changes) {
@@ -56,6 +57,11 @@ class LessonListComponent implements OnChanges, OnDestroy {
 			this.lessons = lessons;
 			this.progressService.done();
 		});
+	}
+
+	private displayLessonDetails($event: ILesson): void {
+		this.lessonListService.selectedLesson = $event;
+		this.router.navigate(['/lesson-detail', $event.url]);
 	}
 }
 

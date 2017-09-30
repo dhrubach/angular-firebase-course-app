@@ -1,6 +1,7 @@
 <div class="lesson-list-item-container mat-elevation-z2" id="lesson-list">
 	<md-list>
-		<md-list-item *ngFor="let lesson of lessons" class="lesson-list-item__content-container">
+		<md-list-item *ngFor="let lesson of lessons" class="lesson-list-item__content-container"
+			(click)="displayLessonDetails(lesson)">
 			<div class="lesson-list-item__content-title">
 				<span class="lesson-list-item__content-title-text">{{lesson.description}}</span>
 			</div>
