@@ -7,6 +7,7 @@
 		<md-card-content class="course-list-item__content">
 			<md-list>
 				<md-list-item *ngFor="let course of courseList" class="course-list-item__content-course-item"
+					[class.course-list-item__content-course-item--is-selected]="selectedCourseUrl === course.url"
 					(click)="onCourseSelect(course)">
 					<course-item [data]="course"></course-item>
 				</md-list-item>

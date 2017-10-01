@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 	private topicsSubscription: Subscription;
 	private topics: ITopic[];
 	private course: string;
+	private selectedCourseUrl: string;
 
 	@ViewChild(ProgressComponent)
 	private progressComponent: ProgressComponent;
@@ -46,7 +47,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	private refreshLessonList($courseId: string) {
-		this.course = $courseId;
+	private refreshLessonList({key, url}) {
+		this.course = key;
+		this.selectedCourseUrl = url;
 	}
 }

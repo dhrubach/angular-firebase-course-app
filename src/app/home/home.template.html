@@ -1,7 +1,8 @@
 <div class="home-container">
 	<div class="course-list-container">
 		<div *ngFor="let topic of topics">
-			<course-list [topic]="topic" (onSelect)="refreshLessonList($event)"></course-list>
+			<course-list [topic]="topic" [selectedCourse]="selectedCourseUrl"
+				(onSelect)="refreshLessonList($event)"></course-list>
 		</div>
 	</div>
 	<div class="lesson-list-container">

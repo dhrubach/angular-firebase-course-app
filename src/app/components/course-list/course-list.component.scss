@@ -45,6 +45,10 @@
 		padding-top: 5px;
 
 		border-bottom: 1px solid $default-border-color;
+
+		&--is-selected {
+			background-color: #e0e6e2;
+		}
 	}
 }
 

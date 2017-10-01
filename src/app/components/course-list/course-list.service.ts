@@ -12,6 +12,8 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class CourseListService {
 
+	private static storageKey: string = 'course-name';
+
 	constructor(private db: AngularFireDatabase) { } /* tslint:disable-line */
 
 	public fetchListOfCourses(topicId: string): Observable<ICourse[]> {
@@ -28,5 +30,16 @@ export class CourseListService {
 				Observable.combineLatest<ICourse>(objectObservableArray));
 
 		return courses$;
+	}
+
+	public persistSelectedCourse(selectedCourseUrl: string): void {
+		if (selectedCourseUrl) {
+			window.sessionStorage[CourseListService.storageKey] = selectedCourseUrl;
+		}
+	}
+
+	public fetchSelectedCourse(): string {
+		const persistedCourse = window.sessionStorage[CourseListService.storageKey];
+		return persistedCourse || null;
 	}
 }
