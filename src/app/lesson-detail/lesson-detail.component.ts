@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ILesson } from '../../models/lesson';
-import { LessonListService } from '../lesson-list/lesson-list.service';
+import { LessonListService } from '../components';
+import { ILesson } from '../models/lesson';
 
 @Component({
 	selector: 'course-lesson-detail',
